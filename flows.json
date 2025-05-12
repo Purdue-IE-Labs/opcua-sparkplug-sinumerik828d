@@ -1,0 +1,1026 @@
+[
+    {
+        "id": "e04950ea94f1d9e7",
+        "type": "tab",
+        "label": "Fryer OPC UA Integration",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3a59740a2faff6ef",
+        "type": "group",
+        "z": "e04950ea94f1d9e7",
+        "name": "OPC-UA",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a8c20e30e078c286",
+            "48e48280212a8168",
+            "b693e2a549c0898d",
+            "044e9983cc6537ee",
+            "09d75797357385a5",
+            "babe3dacdeec6ec2",
+            "cbbbd68d6d42e552",
+            "626dd027469893fe",
+            "882e88cd6ee14245",
+            "ba6ae3a93307fbe7",
+            "e2bdd84d6910808b",
+            "867e9ddbef13a9e9",
+            "3e2585120dfd4055",
+            "85cf2f516d5c53b6",
+            "f07fd4f00fbd7660",
+            "0a8d906e130e30a7",
+            "e0e3b51e620f2c73",
+            "1ac37e0c30202c8d",
+            "d06db7b89788a163"
+        ],
+        "x": 114,
+        "y": 159,
+        "w": 852,
+        "h": 442
+    },
+    {
+        "id": "3f48f57d189ca283",
+        "type": "group",
+        "z": "e04950ea94f1d9e7",
+        "name": "Sparkplug",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "55cc3b59901bedf4",
+            "e2d30f617883160c",
+            "710485c8f8dd8746",
+            "21fd2c84d2f7298c",
+            "1518cfd3bf79bc0d",
+            "e09b474bbb330c87",
+            "284a8ada22e7b10d",
+            "7ab63ecf268c4db5",
+            "908a37677334ad14",
+            "5c24288be0127362",
+            "06a1c7f017beab9d",
+            "39d15856d3298f79",
+            "7969964e0e726704",
+            "e402f36ac98a0ba4",
+            "85ae475df31c2b6d"
+        ],
+        "x": 1014,
+        "y": 159,
+        "w": 912,
+        "h": 442
+    },
+    {
+        "id": "7fca1dfe71cc62cc",
+        "type": "group",
+        "z": "e04950ea94f1d9e7",
+        "name": "OPC-UA",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "916fa667f8011a15",
+            "dc52526f2f1897d6",
+            "d96a6752a5961259",
+            "34d520a4bfed3e12",
+            "1f254201b72dd9ad",
+            "129a650faf56c7ad",
+            "25532a8a11c809e1",
+            "f420cea2b4ffbc1a"
+        ],
+        "x": 464,
+        "y": 739,
+        "w": 1202,
+        "h": 242
+    },
+    {
+        "id": "a8c20e30e078c286",
+        "type": "OpcUa-Client",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "endpoint": "d26f91eaa1b30a80",
+        "action": "method",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": "1",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": true,
+        "name": "OPCUA Client - Read",
+        "x": 840,
+        "y": 400,
+        "wires": [
+            [
+                "7ab63ecf268c4db5",
+                "908a37677334ad14"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "48e48280212a8168",
+        "type": "comment",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "inject",
+        "info": "",
+        "x": 270,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b693e2a549c0898d",
+        "type": "comment",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "function - JavaScript",
+        "info": "",
+        "x": 490,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "1ac37e0c30202c8d",
+        "type": "comment",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "OPC UA Client Node",
+        "info": "",
+        "x": 850,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "02386c69a3240cd5",
+        "type": "comment",
+        "z": "e04950ea94f1d9e7",
+        "name": "OPC UA to Sparkplug conversion",
+        "info": "",
+        "x": 1010,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "044e9983cc6537ee",
+        "type": "inject",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Main Program Status",
+        "props": [],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "09d75797357385a5"
+            ]
+        ]
+    },
+    {
+        "id": "09d75797357385a5",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Read method - [u1,1]",
+        "func": "var arg0value = \"/NC/_N_NC_GD1_ACX/S_TXT[u1, 1]\"\nvar topic = \"Main Program Status\"\n\nmsg = [\n    {\n        \n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/ReadVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value}],\n        \"topic\":topic,\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 240,
+        "wires": [
+            [
+                "a8c20e30e078c286"
+            ]
+        ]
+    },
+    {
+        "id": "babe3dacdeec6ec2",
+        "type": "inject",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Program Name",
+        "props": [],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 280,
+        "y": 320,
+        "wires": [
+            [
+                "cbbbd68d6d42e552"
+            ]
+        ]
+    },
+    {
+        "id": "cbbbd68d6d42e552",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Read method - [u1,2]",
+        "func": "var arg0value = \"/NC/_N_NC_GD1_ACX/S_TXT[u1, 2]\"\nvar topic = \"Program Name\"\n\nmsg = [\n    {\n        \n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/ReadVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value}],\n        \"topic\":topic\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "a8c20e30e078c286"
+            ]
+        ]
+    },
+    {
+        "id": "626dd027469893fe",
+        "type": "inject",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Last Run subprogram",
+        "props": [],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1.1",
+        "topic": "",
+        "x": 260,
+        "y": 360,
+        "wires": [
+            [
+                "e0e3b51e620f2c73"
+            ]
+        ]
+    },
+    {
+        "id": "882e88cd6ee14245",
+        "type": "inject",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Execute subprogram",
+        "props": [],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 260,
+        "y": 400,
+        "wires": [
+            [
+                "0a8d906e130e30a7"
+            ]
+        ]
+    },
+    {
+        "id": "ba6ae3a93307fbe7",
+        "type": "inject",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Stop Main Program",
+        "props": [],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1.1",
+        "topic": "",
+        "x": 260,
+        "y": 480,
+        "wires": [
+            [
+                "f07fd4f00fbd7660"
+            ]
+        ]
+    },
+    {
+        "id": "e2bdd84d6910808b",
+        "type": "inject",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Sub Program Status",
+        "props": [],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 260,
+        "y": 440,
+        "wires": [
+            [
+                "85cf2f516d5c53b6"
+            ]
+        ]
+    },
+    {
+        "id": "867e9ddbef13a9e9",
+        "type": "inject",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Time",
+        "props": [],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1.1",
+        "topic": "",
+        "x": 310,
+        "y": 560,
+        "wires": [
+            [
+                "3e2585120dfd4055"
+            ]
+        ]
+    },
+    {
+        "id": "3e2585120dfd4055",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Read method - Prog time",
+        "func": "var arg0value = \"/Channel/State/oldProgNetTime\"\nvar topic = \"Last Run subprogram time\"\n\nmsg = [\n    {\n        \n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/ReadVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value}],\n        \"topic\":topic,\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 560,
+        "wires": [
+            [
+                "a8c20e30e078c286"
+            ]
+        ]
+    },
+    {
+        "id": "85cf2f516d5c53b6",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Read method - R[u1,6]",
+        "func": "var arg0value = \"/Channel/Parameter/R[u1,6]\"\nvar topic = \"Sub Program Status\"\n\nmsg = [\n    {\n        \n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/ReadVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value}],\n        \"topic\":topic,\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "a8c20e30e078c286"
+            ]
+        ]
+    },
+    {
+        "id": "f07fd4f00fbd7660",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Read method - R[u1,7]",
+        "func": "var arg0value = \"/Channel/Parameter/R[u1,7]\"\nvar topic = \"Stop Main Program\"\n\nmsg = [\n    {\n        \n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/ReadVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value}],\n        \"topic\":topic,\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 480,
+        "wires": [
+            [
+                "a8c20e30e078c286"
+            ]
+        ]
+    },
+    {
+        "id": "0a8d906e130e30a7",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Read method - R[u1,5]",
+        "func": "var arg0value = \"/Channel/Parameter/R[u1,5]\"\nvar topic = \"Execute subprogram\"\n\nmsg = [\n    {\n        \n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/ReadVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value}],\n        \"topic\":topic,\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "a8c20e30e078c286"
+            ]
+        ]
+    },
+    {
+        "id": "e0e3b51e620f2c73",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Read method - [u1,3]",
+        "func": "var arg0value = \"/NC/_N_NC_GD1_ACX/S_TXT[u1, 3]\"\nvar topic = \"Last Run subprogram\"\n\nmsg = [\n    {\n        \n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/ReadVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value}],\n        \"topic\":topic\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 360,
+        "wires": [
+            [
+                "a8c20e30e078c286"
+            ]
+        ]
+    },
+    {
+        "id": "55cc3b59901bedf4",
+        "type": "inject",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1110,
+        "y": 200,
+        "wires": [
+            [
+                "e2d30f617883160c"
+            ]
+        ]
+    },
+    {
+        "id": "e2d30f617883160c",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "Metrics metadata setup",
+        "func": "msg = {\n    \"definition\": {\n        \"Info/Main Program Status\": {\n            \"dataType\": \"String\",\n            \"properties\": {\n                \"readOnly\": {\n                    \"type\": \"Boolean\",\n                    \"value\": true\n                }\n            }\n        },\n        \"Program Name\": {\n            \"dataType\": \"String\",\n            \"properties\": {\n                \"readOnly\": {\n                    \"type\": \"Boolean\",\n                    \"value\": false\n                }\n            }\n        },\n        \"Execute subprogram\": {\n            \"dataType\": \"Boolean\",\n            \"properties\": {\n                \"readOnly\": {\n                    \"type\": \"Boolean\",\n                    \"value\": false\n                }\n            }\n        },\n        \"Stop Main Program\": {\n            \"dataType\": \"Boolean\",\n            \"properties\": {\n                \"readOnly\": {\n                    \"type\": \"Boolean\",\n                    \"value\": false\n                }\n            }\n        },\n        \"Info/Sub Program Status\": {\n            \"dataType\": \"Boolean\",\n            \"properties\": {\n                \"readOnly\": {\n                    \"type\": \"Boolean\",\n                    \"value\": true\n                }\n            }\n        },\n        \"Info/Last Run Program\": {\n            \"dataType\": \"String\",\n            \"properties\": {\n                \"readOnly\": {\n                    \"type\": \"Boolean\",\n                    \"value\": true\n                }\n            }\n        },\n        \"Info/Last Run subprogram time\": {\n            \"dataType\": \"String\",\n            \"properties\": {\n                \"readOnly\": {\n                    \"type\": \"Boolean\",\n                    \"value\": true\n                }\n            }\n        },\n        \n           //Add more here\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1310,
+        "y": 200,
+        "wires": [
+            [
+                "710485c8f8dd8746",
+                "21fd2c84d2f7298c"
+            ]
+        ]
+    },
+    {
+        "id": "710485c8f8dd8746",
+        "type": "debug",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "birth message",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1540,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "21fd2c84d2f7298c",
+        "type": "link out",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "link out 12",
+        "mode": "link",
+        "links": [
+            "e09b474bbb330c87"
+        ],
+        "x": 1505,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1518cfd3bf79bc0d",
+        "type": "mqtt sparkplug device",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "Fryer",
+        "metrics": {},
+        "broker": "f400bbf75bcb15ce",
+        "birthImmediately": false,
+        "bufferDevice": false,
+        "x": 1810,
+        "y": 400,
+        "wires": [
+            [
+                "4d3a54d7c568e824",
+                "7e868946d44f14f1"
+            ]
+        ]
+    },
+    {
+        "id": "e09b474bbb330c87",
+        "type": "link in",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "link in 12",
+        "links": [
+            "21fd2c84d2f7298c"
+        ],
+        "x": 1695,
+        "y": 260,
+        "wires": [
+            [
+                "1518cfd3bf79bc0d"
+            ]
+        ]
+    },
+    {
+        "id": "284a8ada22e7b10d",
+        "type": "rbe",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "RBE",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1530,
+        "y": 400,
+        "wires": [
+            [
+                "1518cfd3bf79bc0d"
+            ]
+        ]
+    },
+    {
+        "id": "7ab63ecf268c4db5",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "Sparkplug MQTT formatting",
+        "func": "var topic = \"\";\nvar command = msg.payload;\nlet now = new Date();\n\n//Map topic to respective variable from OPC-UA\nif (msg.inputArguments[0].value == \"/NC/_N_NC_GD1_ACX/S_TXT[u1, 1]\"){\n    topic = \"Info/Main Program Status\"\n}\nelse if (msg.inputArguments[0].value == \"/NC/_N_NC_GD1_ACX/S_TXT[u1, 2]\"){\n    topic = \"Program Name\"\n}\nelse if (msg.inputArguments[0].value == \"/NC/_N_NC_GD1_ACX/S_TXT[u1, 3]\") {\n    topic = \"Info/Last Run Program\"\n}\nelse if (msg.inputArguments[0].value == \"/Channel/Parameter/R[u1,5]\") {\n    topic = \"Execute subprogram\"\n    if (command == 1) {\n        command = true\n    }\n    else if (command == 0) {\n        command = false\n    }\n}\nelse if (msg.inputArguments[0].value == \"/Channel/Parameter/R[u1,6]\") {\n    topic = \"Info/Sub Program Status\"\n    if (command == 1){\n        command = true\n    }\n    else if (command == 0){\n        command = false\n    }\n}\nelse if (msg.inputArguments[0].value == \"/Channel/Parameter/R[u1,7]\") {\n    topic = \"Stop Main Program\"\n    if (command == 1) {\n        command = true\n    }\n    if (command == 0) {\n        command = false\n    }\n}\nelse if (msg.inputArguments[0].value == \"/Channel/State/oldProgNetTime\") {\n    topic = \"Info/Last Run subprogram time\"\n}\n\nmsg.payload = {\n    metrics : [\n        {\n            \"name\" : topic,\n            \"value\" : command,\n            \"timestamp\" : now\n        }\n    ]\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 400,
+        "wires": [
+            [
+                "284a8ada22e7b10d"
+            ]
+        ]
+    },
+    {
+        "id": "908a37677334ad14",
+        "type": "trigger",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "Watchdog",
+        "op1": "",
+        "op2": "death",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "5",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "topic",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1220,
+        "y": 500,
+        "wires": [
+            [
+                "06a1c7f017beab9d"
+            ]
+        ]
+    },
+    {
+        "id": "5c24288be0127362",
+        "type": "catch",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "",
+        "scope": [
+            "3cbede615e88ac54"
+        ],
+        "uncaught": false,
+        "x": 1230,
+        "y": 560,
+        "wires": [
+            [
+                "06a1c7f017beab9d"
+            ]
+        ]
+    },
+    {
+        "id": "06a1c7f017beab9d",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "Device death",
+        "func": "msg = {\n    \"command\":{\n        \"device\":{\n            \"death\" : true\n        }\n    }\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 520,
+        "wires": [
+            [
+                "39d15856d3298f79"
+            ]
+        ]
+    },
+    {
+        "id": "39d15856d3298f79",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "Reset RBE",
+        "func": "msg.payload = null;\nmsg.topic = null;\nmsg.reset = true;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1590,
+        "y": 520,
+        "wires": [
+            [
+                "284a8ada22e7b10d"
+            ]
+        ]
+    },
+    {
+        "id": "7969964e0e726704",
+        "type": "comment",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "Birth message",
+        "info": "",
+        "x": 1290,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e402f36ac98a0ba4",
+        "type": "comment",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "Sparkplug Node",
+        "info": "",
+        "x": 1820,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "85ae475df31c2b6d",
+        "type": "comment",
+        "z": "e04950ea94f1d9e7",
+        "g": "3f48f57d189ca283",
+        "name": "Conversion node",
+        "info": "",
+        "x": 1180,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "4d3a54d7c568e824",
+        "type": "debug",
+        "z": "e04950ea94f1d9e7",
+        "name": "Sparkplug command",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2100,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d06db7b89788a163",
+        "type": "comment",
+        "z": "e04950ea94f1d9e7",
+        "g": "3a59740a2faff6ef",
+        "name": "Program name - Max 14 characters",
+        "info": "",
+        "x": 280,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "dc52526f2f1897d6",
+        "type": "link in",
+        "z": "e04950ea94f1d9e7",
+        "g": "7fca1dfe71cc62cc",
+        "name": "link in 13",
+        "links": [
+            "7e868946d44f14f1"
+        ],
+        "x": 505,
+        "y": 840,
+        "wires": [
+            [
+                "d96a6752a5961259"
+            ]
+        ]
+    },
+    {
+        "id": "d96a6752a5961259",
+        "type": "switch",
+        "z": "e04950ea94f1d9e7",
+        "g": "7fca1dfe71cc62cc",
+        "name": "",
+        "property": "payload.metrics[0].name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Execute subprogram",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Stop Main Program",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Program Name",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 610,
+        "y": 840,
+        "wires": [
+            [
+                "34d520a4bfed3e12",
+                "1f254201b72dd9ad"
+            ],
+            [
+                "129a650faf56c7ad"
+            ],
+            [
+                "25532a8a11c809e1"
+            ]
+        ]
+    },
+    {
+        "id": "34d520a4bfed3e12",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "7fca1dfe71cc62cc",
+        "name": "Start subprogram",
+        "func": "var prog_state = msg.payload.metrics[0].value\nif (prog_state == true) {\n    prog_state = \"STARTSUB\"\n}\n\nvar arg0value = \"/NC/_N_NC_GD1_ACX/S_TXT[u1, 1]\"\nvar arg1value = prog_state\nvar topic = msg.payload.metrics[0].name\nmsg = [\n    {\n\n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/WriteVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value }, { dataType: \"String\", value: arg1value }],\n        \"topic\":topic\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 780,
+        "wires": [
+            [
+                "f420cea2b4ffbc1a"
+            ]
+        ]
+    },
+    {
+        "id": "1f254201b72dd9ad",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "7fca1dfe71cc62cc",
+        "name": "Start subprogram status",
+        "func": "var prog_state = msg.payload.metrics[0].value\nvar topic = msg.payload.metrics[0].name\nvar arg0value = \"/Channel/Parameter/R[u1,5]\"\n\nif (prog_state == true) {\n    prog_state = \"1\"\n}\n\nvar arg1value = prog_state\n\nmsg = [\n    {\n\n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/WriteVar\",\n        \"inputArguments\": [\n            { dataType: \"String\", value: arg0value}, \n            { dataType: \"String\", value: arg1value}\n            ],\n        \"topic\": topic\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 820,
+        "wires": [
+            [
+                "f420cea2b4ffbc1a"
+            ]
+        ]
+    },
+    {
+        "id": "129a650faf56c7ad",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "7fca1dfe71cc62cc",
+        "name": "Stop Main Program",
+        "func": "var prog_state = msg.payload.metrics[0].value\nif (prog_state == true) {\n    prog_state = \"STOP\"\n}\n\nvar arg0value = \"/NC/_N_NC_GD1_ACX/S_TXT[u1, 1]\"\nvar arg1value = prog_state\nvar topic = msg.payload.metrics[0].name\nmsg = [\n    {\n\n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/WriteVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value }, { dataType: \"String\", value: arg1value }],\n        \"topic\":topic\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 880,
+        "wires": [
+            [
+                "f420cea2b4ffbc1a"
+            ]
+        ]
+    },
+    {
+        "id": "25532a8a11c809e1",
+        "type": "function",
+        "z": "e04950ea94f1d9e7",
+        "g": "7fca1dfe71cc62cc",
+        "name": "Write Program Name",
+        "func": "var prog_name = msg.payload.metrics[0].value\nvar topic = msg.payload.metrics[0].name\nvar arg0value = \"/NC/_N_NC_GD1_ACX/S_TXT[u1, 2]\"\nvar arg1value = prog_name\n\nmsg = [\n    {\n\n        \"objectId\": \"ns=2;s=Sinumerik\",\n        \"methodId\": \"ns=2;s=/Methods/WriteVar\",\n        \"inputArguments\": [{ dataType: \"String\", value: arg0value }, { dataType: \"String\", value: arg1value }],\n        \"topic\": topic\n    }\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 940,
+        "wires": [
+            [
+                "f420cea2b4ffbc1a"
+            ]
+        ]
+    },
+    {
+        "id": "f420cea2b4ffbc1a",
+        "type": "OpcUa-Client",
+        "z": "e04950ea94f1d9e7",
+        "g": "7fca1dfe71cc62cc",
+        "endpoint": "d26f91eaa1b30a80",
+        "action": "method",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": "1",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "OPCUA Client - Write",
+        "x": 1300,
+        "y": 860,
+        "wires": [
+            [
+                "916fa667f8011a15"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "916fa667f8011a15",
+        "type": "debug",
+        "z": "e04950ea94f1d9e7",
+        "g": "7fca1dfe71cc62cc",
+        "name": "debug 91",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1560,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "8b1e7dff5fc2ebe8",
+        "type": "comment",
+        "z": "e04950ea94f1d9e7",
+        "name": "Sparkplug to OPC-UA conversion",
+        "info": "",
+        "x": 770,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "7e868946d44f14f1",
+        "type": "link out",
+        "z": "e04950ea94f1d9e7",
+        "name": "link out 13",
+        "mode": "link",
+        "links": [
+            "dc52526f2f1897d6"
+        ],
+        "x": 1995,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "d26f91eaa1b30a80",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.4.109:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": false,
+        "login": true,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "f400bbf75bcb15ce",
+        "type": "mqtt-sparkplug-broker",
+        "name": "Central Broker",
+        "deviceGroup": "Build_at_Scale",
+        "eonName": "CNC",
+        "broker": "192.168.4.128",
+        "port": "8884",
+        "tls": "6a73a9259178b6bd",
+        "clientid": "",
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "enableStoreForward": false,
+        "compressAlgorithm": "",
+        "aliasMetrics": false,
+        "useTemplates": true,
+        "manualEoNBirth": false,
+        "primaryScada": ""
+    },
+    {
+        "id": "6a73a9259178b6bd",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "ca.crt",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    }
+]
